@@ -1,4 +1,4 @@
-package es.spain.datos.controller;
+package es.spain.datos.controller.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

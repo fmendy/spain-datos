@@ -24,7 +24,7 @@ public class TipoMatriculaServiceImpl implements TipoMatriculaService {
 	@Override
 	public List<ComboDTO> getListComboDTO() {
 		List<TipoMatricula> list = tipoMatriculaRepository.findByActivoTrue();
-		return TipoMatriculaUtils.INSTANCE.listToListComboDTO(list);
+		return TipoMatriculaUtils.INSTANCE.listToListComboDTOByCodigo(list);
 	}
 
 	@Override

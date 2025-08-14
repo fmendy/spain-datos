@@ -44,11 +44,25 @@ public class TipoMatriculaUtils extends MaestraUtils<TipoMatriculaDTO, TipoMatri
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 
-	public List<ComboDTO> listToListComboDTO(List<TipoMatricula> list) {
+
+
+	@Override
+	public List<ComboDTO> listToListComboDTOByUuid(List<TipoMatricula> list) {
 		List<ComboDTO> retVal = new ArrayList<>();
 		for (TipoMatricula bean : list) {
-			retVal.add(new ComboDTO(bean.getUuid(), bean.getDescripcion()));
+			retVal.add(new ComboDTO(bean.getUuid(), bean.getNombre()));
+		}
+		Utils.orderComboForm(retVal);
+		return retVal;
+	}
+
+	@Override
+	public List<ComboDTO> listToListComboDTOByCodigo(List<TipoMatricula> list) {
+		List<ComboDTO> retVal = new ArrayList<>();
+		for (TipoMatricula bean : list) {
+			retVal.add(new ComboDTO(bean.getCodigo(), bean.getNombre()));
 		}
 		Utils.orderComboForm(retVal);
 		return retVal;

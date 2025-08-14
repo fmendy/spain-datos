@@ -18,5 +18,7 @@ public abstract class MaestraUtils<T extends MaestraDTO, F extends Maestra> {
 
 	public abstract F dtoToModel(T dto, F model);
 
-	public abstract List<ComboDTO> listToListComboDTO(List<F> list);
+	public abstract List<ComboDTO> listToListComboDTOByUuid(List<F> list);
+	
+	public abstract List<ComboDTO> listToListComboDTOByCodigo(List<F> list);
 }
