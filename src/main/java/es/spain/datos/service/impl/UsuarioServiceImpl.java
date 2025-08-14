@@ -24,7 +24,7 @@ import es.spain.datos.dto.specifications.UsuarioSpecifications;
 import es.spain.datos.model.Usuario;
 import es.spain.datos.repository.UsuarioRepository;
 import es.spain.datos.service.UsuarioService;
-import es.spain.datos.utils.UsuarioUtil;
+import es.spain.datos.utils.UsuarioUtils;
 import es.spain.datos.utils.Utils;
 import jakarta.validation.Valid;
 
@@ -39,21 +39,21 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
 
 	@Override
 	public Page<UsuarioDTO> getPageSearch(UsuarioFilter filter, Pageable pageable) {
-		return UsuarioUtil.pageToPageForm(usuarioRepository.findAll(UsuarioSpecifications.filter(filter), pageable));
+		return UsuarioUtils.pageToPageForm(usuarioRepository.findAll(UsuarioSpecifications.filter(filter), pageable));
 	}
 
 	@Override
 	@Transactional
 	public Long guardar(UsuarioDTO form) {
 		Usuario model = usuarioRepository.findByActivoTrueAndId(form.getId());
-		model = UsuarioUtil.formToModel(form, model);
+		model = UsuarioUtils.formToModel(form, model);
 		usuarioRepository.saveAndFlush(model);
 		return model.getId();
 	}
 
 	@Override
 	public UsuarioDTO getById(Long id) {
-		return UsuarioUtil.modelToForm(usuarioRepository.findByActivoTrueAndId(id));
+		return UsuarioUtils.modelToForm(usuarioRepository.findByActivoTrueAndId(id));
 	}
 
 	@Override
@@ -123,7 +123,7 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
 	@Override
 	public Long guardarDatos(UsuarioDTO form) {
 		Usuario model = usuarioRepository.findByActivoTrueAndId(form.getId());
-		model = UsuarioUtil.formToModel(form, model);
+		model = UsuarioUtils.formToModel(form, model);
 		usuarioRepository.saveAndFlush(model);
 		return model.getId();
 	}

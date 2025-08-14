@@ -9,5 +9,5 @@ import es.spain.datos.dto.filter.MaestraFilter;
 public interface MaestraService<T, F extends MaestraDTO, K extends MaestraFilter>
         extends BaseEntityService<T, F, K> {    
     
-    List<ComboDTO> getListComboForm();
+    List<ComboDTO> getListComboDTO();
 }

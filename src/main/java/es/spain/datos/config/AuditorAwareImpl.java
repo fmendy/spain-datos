@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import es.spain.datos.model.Usuario;
 import es.spain.datos.service.UsuarioService;
-import es.spain.datos.utils.SecurityUtil;
+import es.spain.datos.utils.SecurityUtils;
 
 
 
@@ -31,7 +31,7 @@ public class AuditorAwareImpl implements AuditorAware<Usuario> {
 		}
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		if (!SecurityUtil.isAuthenticated()) {
+		if (!SecurityUtils.isAuthenticated()) {
 			return Optional.ofNullable(new Usuario(1L)); // Usuario por defecto
 		} else {
 			//return Optional.ofNullable(new Usuario(1L)); // Usuario por defecto

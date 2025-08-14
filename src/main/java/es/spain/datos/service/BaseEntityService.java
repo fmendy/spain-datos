@@ -11,7 +11,7 @@ public interface BaseEntityService<T, F extends BaseDTO,  K extends BaseEntityFi
 
 	T findById(Long id);
 	
-	F findFormById(Long id);
+	F findDTOById(Long id);
 	
 	void eliminar(Long id);
 	

@@ -5,8 +5,9 @@ import java.text.SimpleDateFormat;
 import java.time.Month;
 import java.time.format.TextStyle;
 import java.util.Calendar;
+import java.util.Comparator;
 import java.util.Date;
-
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.TimeZone;
@@ -14,6 +15,7 @@ import java.util.TimeZone;
 import org.springframework.data.domain.Sort;
 import org.springframework.util.StringUtils;
 
+import es.spain.datos.dto.ComboDTO;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
@@ -86,6 +88,10 @@ public class Utils {
 
 	public static Long intToLong(int i) {
 		return Long.parseLong(Integer.toString(i));
+	}
+	
+	public static void orderComboForm(final List<ComboDTO> list) {
+		list.sort(Comparator.comparing(ComboDTO::getValue));
 	}
 
 }

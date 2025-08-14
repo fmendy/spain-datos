@@ -14,7 +14,7 @@ import es.spain.datos.model.Usuario;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
-public class UsuarioUtil {
+public class UsuarioUtils {
 
 	public UsuarioDTO modelToForm(Usuario model) {
 		UsuarioDTO retVal = new UsuarioDTO();

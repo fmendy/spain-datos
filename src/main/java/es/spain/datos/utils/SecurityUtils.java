@@ -9,7 +9,7 @@ import es.spain.datos.dto.CustomUserDetailsDTO;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
-public class SecurityUtil {
+public class SecurityUtils {
 
 	public static CustomUserDetailsDTO getCurrentUser() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
